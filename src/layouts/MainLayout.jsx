@@ -1,7 +1,12 @@
-import React from 'react'
+import React from "react";
+import { HeaderLayout } from "./HeaderLayout";
+import { FooterLayout } from "./FooterLayout";
 
 export const MainLayout = () => {
   return (
-    <div>MainLayout</div>
-  )
-}
+    <>
+      <HeaderLayout />
+      <FooterLayout />
+    </>
+  );
+};

@@ -1,21 +1,12 @@
-import { createStore } from "redux";
+import { configureStore } from "@reduxjs/toolkit";
+import logoReducer from "@/assets/bestelerim-logo-black.png";
 
-// İlk durum (initial state)
-const initialState = {
-  logoPath: "", // Logonun URL'sini saklayacağız
+const rootReducer = {
+  logo: logoReducer,
 };
 
-// Reducer
-const rootReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case "SET_LOGO_PATH":
-      return { ...state, logoPath: action.payload };
-    default:
-      return state;
-  }
-};
-
-// Store'u oluştur
-const store = createStore(rootReducer);
+const store = configureStore({
+  reducer: rootReducer,
+});
 
 export default store;
