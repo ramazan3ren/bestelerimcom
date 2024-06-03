@@ -1,5 +1,0 @@
-[[redirects]]
-  from = "https://bestelerim.com.tr/*"
-  to = "https://bestelerim.com/:splat"
-  status = 301
-  force = true
