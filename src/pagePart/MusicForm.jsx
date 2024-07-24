@@ -19,8 +19,14 @@ export const MusicForm = () => {
   const onClickEvent = () => {
     handleDialogOpen();
   };
-  const { handleDialogOpen, isChecked, phone, setOpenAlertDialog } =
-    useContext(Context);
+  const {
+    handleDialogOpen,
+    isChecked,
+    phone,
+    setOpenAlertDialog,
+    setIsChecked,
+    setPhone,
+  } = useContext(Context);
   const [email, setEmail] = useState("");
   const [nameSurname, setNameSurname] = useState("");
   const [desc, setDesc] = useState("");
@@ -104,6 +110,12 @@ export const MusicForm = () => {
           console.error("Error:", error);
         });
       setOpenAlertDialog(true);
+      setEmail("");
+      setDesc("");
+      setNameSurname("");
+      setPoems("");
+      setIsChecked(false);
+      setPhone("");
     }
   };
 

@@ -105,6 +105,8 @@ function ProviderContextAPI({ children }) {
     setIsChecked,
     handleIagree,
     phone,
+    setPhone,
+    setIsChecked,
     handlePhone,
     handleClose,
     openAlertDialog,

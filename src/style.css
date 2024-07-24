@@ -558,14 +558,6 @@ video {
   position: fixed;
 }
 
-.absolute {
-  position: absolute;
-}
-
-.sticky {
-  position: sticky;
-}
-
 .bottom-3 {
   bottom: 0.75rem;
 }
@@ -578,32 +570,12 @@ video {
   right: 0px;
 }
 
-.right-5 {
-  right: 1.25rem;
-}
-
 .top-0 {
   top: 0px;
 }
 
-.top-16 {
-  top: 4rem;
-}
-
 .top-24 {
   top: 6rem;
-}
-
-.top-20 {
-  top: 5rem;
-}
-
-.top-56 {
-  top: 14rem;
-}
-
-.top-32 {
-  top: 8rem;
 }
 
 .z-50 {
@@ -788,14 +760,6 @@ video {
 
 .w-screen {
   width: 100vw;
-}
-
-.w-auto {
-  width: auto;
-}
-
-.w-96 {
-  width: 24rem;
 }
 
 .select-none {
