@@ -2,4 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  @apply font-montserrat;
+}
 
+body.dark {
+  @apply bg-darkThemeColor;
+}
+
+.nav-link {
+  @apply px-2 py-3 text-black dark:text-white hover:text-primaryColor dark:hover:text-darkThemeTextColor text-lg hover:transition-all;
+}
+
+.nav-link-dropdown {
+  @apply px-3 py-3 text-white hover:bg-white hover:text-primaryColor dark:text-white rounded-2xl dark:hover:text-primaryColor text-lg hover:transition-all mt-7;
+}
+
+::-webkit-scrollbar {
+  @apply w-[10px];
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primaryColor rounded-xl;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-red-900 transition-all;
+}
+
+::selection {
+  @apply text-white bg-primaryColor;
+}
+
+.social-media {
+  @apply flex flex-row text-xl lg:text-2xl w-full justify-center transition-all;
+}
+
+.social-media a {
+  @apply mr-3 text-black hover:text-primaryColor dark:text-white dark:hover:text-primaryColor transition-all;
+}

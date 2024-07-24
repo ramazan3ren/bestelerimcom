@@ -1,12 +1,10 @@
+import logoSlice from "@/slices/logoSlice";
 import { configureStore } from "@reduxjs/toolkit";
-import logoReducer from "@/assets/bestelerim-logo-black.png";
-
-const rootReducer = {
-  logo: logoReducer,
-};
 
 const store = configureStore({
-  reducer: rootReducer,
+  reducer: {
+    logo: logoSlice,
+  },
 });
 
 export default store;
