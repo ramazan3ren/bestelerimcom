@@ -4,7 +4,6 @@ import { Element } from "react-scroll";
 import { Input } from "@/components/Input";
 
 import { TelephoneInput } from "@/components/TelephoneInput";
-import { Link } from "react-router-dom";
 
 import axios from "axios";
 import { CopyComponent } from "@/components/CopyComponent";
