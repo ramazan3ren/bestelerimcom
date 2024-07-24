@@ -101,9 +101,6 @@ importers:
       react-konva:
         specifier: 18.2.10
         version: 18.2.10(konva@9.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      react-redux:
-        specifier: ^9.1.2
-        version: 9.1.2(@types/react@18.3.3)(react@18.3.1)(redux@5.0.1)
       react-router-dom:
         specifier: ^6.24.1
         version: 6.24.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -6544,7 +6541,8 @@ snapshots:
 
   '@types/stack-utils@2.0.3': {}
 
-  '@types/use-sync-external-store@0.0.3': {}
+  '@types/use-sync-external-store@0.0.3':
+    optional: true
 
   '@types/webxr@0.5.19': {}
 
@@ -8788,6 +8786,7 @@ snapshots:
     optionalDependencies:
       '@types/react': 18.3.3
       redux: 5.0.1
+    optional: true
 
   react-refresh@0.14.2: {}
 
@@ -9454,6 +9453,7 @@ snapshots:
   use-sync-external-store@1.2.2(react@18.3.1):
     dependencies:
       react: 18.3.1
+    optional: true
 
   util-deprecate@1.0.2: {}
 
