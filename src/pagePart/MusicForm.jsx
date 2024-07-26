@@ -103,14 +103,9 @@ export const MusicForm = () => {
     event.preventDefault();
 
     if (!error && email) {
-      await fetch("http://34.172.224.16/compositions", {
-        method: "POST",
-        body: emailContent,
+      axios.post("/api/compositions", emailContent).catch((error) => {
+        console.error("Error:", error);
       });
-      // .post("http://34.172.224.16/compositions", emailContent)
-      // .catch((error) => {
-      //   console.error("Error:", error);
-      // });
       setOpenAlertDialog(true);
       setEmail("");
       setDesc("");

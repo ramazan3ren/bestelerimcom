@@ -7,3 +7,9 @@
   for = "/*"
   [headers.values]
     Permissions-Policy = "interest-cohort=()"
+
+[[redirects]]
+  from = "/api/*"
+  to = "http://34.172.224.16/:splat"
+  status = 200
+  force = true

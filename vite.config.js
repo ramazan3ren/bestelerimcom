@@ -8,7 +8,12 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      "/api": "http://34.172.224.16/compositions",
+      "/api": {
+        target: "http://34.172.224.16",
+        changeOrigin: true,
+        secure: false,
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
     },
   },
   resolve: {
@@ -17,8 +22,3 @@ export default defineConfig({
     },
   },
 });
-
-
-// changeOrigin: true,
-// secure:false,
-// rewrite: (path) => path.replace(/^\/api/, ""),
