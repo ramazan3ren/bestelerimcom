@@ -11,6 +11,7 @@ export const TelephoneInput = ({labelError}) => {
     <div className="w-full mb-3">
       <MuiTelInput
         value={phone}
+        error={phone != null ? true : false}
         onChange={handlePhone}
         helperText={labelError}
         color="error"

@@ -15,6 +15,7 @@ import { useState } from "react";
 import { AlertDialog } from "@/components/AlertDialog";
 
 export const MusicForm = () => {
+  const apiUrl = import.meta.env.VITE_API_URL;
   const onClickEvent = () => {
     handleDialogOpen();
   };
@@ -103,11 +104,9 @@ export const MusicForm = () => {
     event.preventDefault();
 
     if (!error && email) {
-      const response = await axios
-        .post("/api/compositions", emailContent)
-        .catch((error) => {
-          console.error("Error:", error);
-        });
+      await axios.post("/api", emailContent).catch((error) => {
+        console.error("Error:", error);
+      });
       setOpenAlertDialog(true);
       setEmail("");
       setDesc("");
@@ -162,6 +161,7 @@ export const MusicForm = () => {
                     color={"error"}
                     type={"email"}
                     disabled={false}
+                    value={email}
                     isMultiline={false}
                     labelError={helperText}
                     label={"E-posta"}
@@ -173,6 +173,7 @@ export const MusicForm = () => {
                     color={"error"}
                     type={"text"}
                     disabled={false}
+                    value={nameSurname}
                     isMultiline={false}
                     labelError={"Lütfen Adınızı Soyadınızı Giriniz!"}
                     label={"Adınız ve Soyadınız"}
@@ -186,6 +187,7 @@ export const MusicForm = () => {
                     color={"error"}
                     type={"text"}
                     disabled={false}
+                    value={desc}
                     isMultiline={true}
                     maxRows={8.11111111111}
                     maxLength={500}
@@ -210,6 +212,7 @@ export const MusicForm = () => {
                     isMultiline={true}
                     maxRows={18.4}
                     minRows={18.4}
+                    value={poems}
                     maxLength={2000}
                     // labelError={errors != null ? errors.email : null}
                     label={"Şiir ya da En Az 10 Kelime Girin"}
@@ -237,11 +240,7 @@ export const MusicForm = () => {
               </div>
               <button
                 disabled={
-                  email === null ||
-                  nameSurname === null ||
-                  desc === null ||
-                  isChecked == false ||
-                  phone === null
+                  !email || !nameSurname || !desc || !isChecked || !phone
                 }
                 onClick={handlePostRequest}
                 className="disabled:bg-opacity-50 disabled:bg-primaryColor py-3 px-6 text-white bottom-3 rounded-full mb-5 text-center bg-primaryColor hover:bg-red-900 transition-all"
