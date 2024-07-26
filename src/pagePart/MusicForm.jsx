@@ -15,7 +15,6 @@ import { useState } from "react";
 import { AlertDialog } from "@/components/AlertDialog";
 
 export const MusicForm = () => {
-  const apiUrl = import.meta.env.VITE_API_URL;
   const onClickEvent = () => {
     handleDialogOpen();
   };
@@ -104,9 +103,11 @@ export const MusicForm = () => {
     event.preventDefault();
 
     if (!error && email) {
-      await axios.post("/api", emailContent).catch((error) => {
-        console.error("Error:", error);
-      });
+      await axios
+        .post("http://34.172.224.16/compositions", emailContent)
+        .catch((error) => {
+          console.error("Error:", error);
+        });
       setOpenAlertDialog(true);
       setEmail("");
       setDesc("");
